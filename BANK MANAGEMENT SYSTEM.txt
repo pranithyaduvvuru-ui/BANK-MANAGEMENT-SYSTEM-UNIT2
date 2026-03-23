@@ -1,0 +1,57 @@
+import java.util.*;
+class BankAccount {
+private String accountNumber;
+private String accountHolder;
+private String accountType;
+private double balance;
+void setDetails(String accNo, String holder, String type, double bal) {
+accountNumber = accNo;
+accountHolder = holder;
+accountType = type;
+balance = bal;
+}
+void displayAccountDetails() {
+System.out.println();
+System.out.println(" BANK ACCOUNT DETAILS");
+System.out.println("Account Number : " + accountNumber);
+System.out.println("Account Holder : " + accountHolder);
+System.out.println("Account Type : " + accountType);
+System.out.println("Bank Status : Active\n");
+}
+void transactionDetails(double deposit, double withdraw) {
+System.out.println();
+System.out.println("TRANSACTION DETAILS");
+System.out.printf("Opening Balance : ₹%.2f\n", balance);
+balance += deposit;
+System.out.printf("Deposit Amount : ₹%.2f\n", deposit);
+System.out.printf("Balance After Deposit : ₹%.2f\n\n", balance);
+balance -= withdraw;
+System.out.printf("Withdrawal Amount: ₹%.2f\n", withdraw);
+System.out.printf("Balance After Withdrawal : ₹%.2f\n\n", balance);
+}
+void summary(double deposit, double withdraw) {
+System.out.println(" SUMMARY");
+System.out.printf("Total Deposits : ₹%.2f\n", deposit);
+System.out.printf("Total Withdrawals: ₹%.2f\n", withdraw);
+System.out.printf("Current Balance : ₹%.2f\n\n", balance);
+System.out.println("Transaction Status : Successful");
+System.out.println("Last Updated : Today");
+}
+}
+public class Solution {
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+String accNo = s.nextLine();
+String name = s.nextLine();
+double balance = s.nextDouble();
+s.nextLine();
+String type = s.nextLine();
+double deposit = s.nextDouble();
+double withdraw = s.nextDouble();
+BankAccount b = new BankAccount();
+b.setDetails(accNo, name, type, balance);
+b.displayAccountDetails();
+b.transactionDetails(deposit, withdraw);
+b.summary(deposit, withdraw);
+}
+}
