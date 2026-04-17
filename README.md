@@ -185,14 +185,3 @@ Last Updated : Today
 * Store data using files or database
 
 ---
-
-## 👩‍💻 Author
-
-**Your Name Here**
-GitHub: *Add your profile link here*
-
----
-
-## 🔗 GitHub Repository
-
-👉 *Paste your repository link here*
